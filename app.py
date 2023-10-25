@@ -27,7 +27,7 @@ def upload():
         text="The classified Garbage is : " +str(index[pred[0]])
         return text    
 
-#if __name__=='__main__':
-#    app.run(host="0.0.0.0", port=8080,debug=True)
+if __name__=='__main__':
+   app.run(host="0.0.0.0", port=8080,debug=True)
 
 
