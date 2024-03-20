@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Disposal Instructions</title>
+</head>
+<body>
+    <h1>Submit a Description of Waste for Disposal Instructions</h1>
+    <form action="/generate_response" method="post">
+        <textarea name="user_input" rows="4" cols="50" placeholder="Enter description of the waste here..."></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('form').on('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting via the browser
+            $.ajax({
+                url: '/generate_response',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    $('#response').html('<p>' + response.response + '</p>');
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Disposal Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #response {
+            margin-top: 20px;
+        }
+
+        .response-message {
+            padding: 10px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit a Description of Waste for Disposal Instructions</h1>
+        <form action="/generate_response" method="post">
+            <textarea name="user_input" rows="4" cols="50" placeholder="Enter description of the waste here..."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="response"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('form').on('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting via the browser
+            $.ajax({
+                url: '/generate_response',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    $('#response').html('<p>' + response.response + '</p>');
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

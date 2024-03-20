@@ -1,3 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+p {
+  font-weight: 300;
+  color: #111;
+}
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(wall.avif);
+  background-size: cover;
+}
+.banner .content {
+  max-width: 1200px;
+  text-align: center;
+}
+.banner .content h2 {
+  font-size: 5em;
+  color: rgb(248, 248, 246);
+}
+.banner .content h3 {
+  font-size: 2em;
+  color: rgb(248, 248, 246);
+}
+.banner .content p {
+  font-size: 1em;
+  color: rgb(8, 8, 8);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+header.sticky {
+  background: #0078d7;
+  padding: 10px 100px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+header .logo {
+  color: #0078d7;
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+}
+header.sticky .logo {
+  color: #fff;
+}
+header .navigation {
+  position: relative;
+  display: flex;
+}
+header .navigation li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+header .navigation li a {
+  text-decoration: none;
+  color: rgb(252, 248, 248);
+  font-weight: 300;
+}
+header .navigation li a:hover {
+  color: rgb(240, 47, 47);
+}
+section {
+  padding: 100px;
+}
+.row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.row .col {
+  position: relative;
+  width: 48%;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .img-preview {
   width: 256px;
   height: 256px;
@@ -6,6 +111,63 @@
   box-shadow: 0px 2px 4px 0px #0f0e1aec;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.contact {
+  background: url(images/bg.jpg);
+  background-size: cover;
+}
+.contactForm {
+  padding: 75px 50px;
+  background: #fff;
+  box-shadow: 0 15px 50px #0078d7;
+  max-width: 500px;
+  margin-top: 50px;
+}
+.contactForm h3 {
+  color: #111;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Hero Section Styles */
+.hero {
+  background-color: #f9f8fa;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #0078d7;
+  margin-bottom: 10px;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #0e0e0e;
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-size: 1em;
+  color: rgb(15, 15, 15);
+  background: #0078d7;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: 0.5s;
+}
+.btn:hover {
+  letter-spacing: 6px;
 }
 
 .img-preview > div {
@@ -26,9 +188,8 @@ input[type="file"] {
   background: #1a1552;
   color: #fff;
   font-size: 1em;
-  cursor: pointer;
   transition: all 0.4s;
-  
+  cursor: pointer;
 }
 
 .upload-label:hover {
@@ -52,4 +213,38 @@ input[type="file"] {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.upload .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.upload .content .box {
+  width: 340px;
+  margin: 20px;
+  border: 15px solod #fff;
+  box-shadow: 0 5px 35px #0078d7;
+}
+.upload .content .box .image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.upload .content .box .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.upload .content .box .text {
+  padding: 15px 0 5px;
+}
+.up .content .box .text h3 {
+  font-weight: 400;
+  color: #111;
 }

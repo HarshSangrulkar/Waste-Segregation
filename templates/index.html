@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>RECYCLiVISION - Waste Classification</title>
+    <title>Logo Detection</title>
     <link
       href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,102 +15,173 @@
       href="{{ url_for('static', filename='css/main.css') }}"
       rel="stylesheet"
     />
-    <style>
-      .bg-dark {
-        background-color: #1a1552 !important;
-      }
-      #result {
-        color: #1a1552;
-      }
-      body {
-        background-image: url("https://wallpaperaccess.com/full/728034.jpg");
-        background-size: cover;
-      }
-    </style>
   </head>
 
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#"
-          >RECYCLiVISION - Waste Classification</a
-        >
+    <header class="sticky">
+      <a href="#" class="logo">LOGO Detection</a>
+      <ul class="navigation">
+        <li><a href="#banner">Home</a></li>
+        <li><a href="#upload">Upload</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+    <section class="banner" id="banner">
+      <div class="content">
+        <h2>Welcome to Fake/Real Logo Detection</h2>
+        <h3>Uncover the authenticity of logos</h3>
+        <section class="hero">
+          <h1 class="hero-title">Why Logo Detection is Important</h1>
+          <p class="hero-description">
+            Logo detection is a critical task in the digital age. The prevalence
+            of counterfeit and fraudulent activities makes it essential to
+            verify the authenticity of logos. Unauthorized logo usage can harm a
+            brand's reputation and lead to financial losses. Detecting fake
+            logos helps in safeguarding businesses, consumers, and the overall
+            market integrity. Our solution empowers organizations to take
+            proactive measures against logo misuse and maintain the trust of
+            their customers.
+          </p>
+        </section>
+        <section class="hero">
+          <h1 class="hero-title">Our Solution</h1>
+          <p class="hero-description">
+            We provide a cutting-edge solution for logo detection and
+            authentication. Using advanced deep learning techniques, our system
+            can accurately determine whether a logo is real or fake. This
+            technology is crucial for protecting brands, preventing fraud, and
+            ensuring the authenticity of products and services. Our model, based
+            on VGG19, is designed to make automated logo authentication
+            easy and efficient.
+          </p>
+        </section>
+
+        <a href="#about" class="btn">About</a>
       </div>
-    </nav>
-    <div class="container">
-      <div id="content" style="margin-top: 2em">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 bd">
-              <h3>Waste-Classification</h3>
-              <br />
-              <p>
-                <b>
-                  Less developed countries are facing a surge in waste due to
-                  urban industrialization. Current waste management, involving
-                  burning waste, causes severe air pollution and health risks.
-                  Manual waste sorting is hazardous. To protect the environment
-                  and health, we need an automated waste separation system based
-                  on Convolutional Neural Networks. This system will reduce
-                  health risks, improve recycling, and convert waste to energy
-                  for economic growth.<br /><br />
-                  Use of Convolutional Neural Networks (CNNs) for waste
-                  separation ensures precision and efficiency, reducing health
-                  risks for workers. It promotes recycling, protects the
-                  environment, and contributes to economic growth, making it a
-                  holistic and innovative approach to waste management.</b
-                >
-              </p>
-              
-            </div>
-            <div class="col-sm-6">
+    </section>
+    <section class="about" id="about">
+      <div>
+        <h2>About Fake/Real Logo Detection</h2>
+        <p>
+          Logo detection and authentication are important tasks in the digital
+          age, where counterfeit and fraudulent activities are prevalent.
+          Detecting fake or real logos can help protect brands, prevent fraud,
+          and ensure the authenticity of products or services. Recent advances
+          in deep learning, specifically convolutional neural networks (CNNs),
+          have proven effective in image recognition tasks, including logo
+          detection. VGG19 is a popular CNN architecture known for its accuracy
+          in image classification tasks. Leveraging VGG19 for fake/real logo
+          detection involves a two-step process: training and inference. The
+          model learns to extract features from logo images and differentiate
+          between real and fake versions based on the provided labels. Once the
+          VGG19 model is trained, it can be used for inference on new logo
+          images to predict whether they are real or fake.
+        </p>
+        <p>
+          <br />The logo images are fed into the trained model, which processes
+          them through its layers and generates predictions. The model outputs
+          probabilities or confidence scores indicating the likelihood of the
+          logo being real or fake. The predictions can be further analyzed and
+          thresholded to make a binary decision (real or fake) based on a
+          predetermined threshold value. This enables automated logo
+          authentication and detection, aiding in the identification of
+          counterfeit products or unauthorized logo usage.
+        </p>
+        <br />
+        <p>
+          By leveraging the power of deep learning and CNNs, this approach
+          enables automated and accurate identification of real and fake logos,
+          contributing to a safer and more secure environment for
+          businesses and consumers.
+        </p>
+      </div>
+      <a href="#upload" class="btn">Upload and Check it out</a>
+    </section>
+    <section class="upload" id="upload">
+      <div>
+        <div id="content" style="margin-top: 2em">
+          <div class="container">
+            <div class="row">
               <div>
-                <h4>Upload Image Here To Classify the Waste</h4>
-                <form
-                  action="/"
-                  id="upload-file"
-                  method="POST"
-                  enctype="multipart/form-data"
-                >
-                  
+                <div>
+                  <h4>Upload Image Here To Classify the Brand</h4>
+                  <form
+                    action="/"
+                    id="upload-file"
+                    method="POST"
+                    enctype="multipart/form-data"
+                  >
+                    <label for="imageUpload" class="upload-label">
+                      Choose...
+                    </label>
+                    <input
+                      type="file"
+                      name="images"
+                      id="imageUpload"
+                      accept=".png, .jpg, .jpeg"
+                    />
+                  </form>
 
-                  <label for="imageUpload" class="upload-label">
-                    Choose...
-                  </label>
-                  <input
-                    type="file"
-                    name="images"
-                    id="imageUpload"
-                    accept=".png, .jpg, .jpeg"
-                  />
-                </form>
+                  <div class="image-section" style="display: none">
+                    <div class="img-preview">
+                      <div id="imagePreview"></div>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        id="btn-predict"
+                      >
+                        Predict!
+                      </button>
+                    </div>
+                  </div>
 
-                <div class="image-section" style="display: none">
-                  <div class="img-preview">
-                    <div id="imagePreview"></div>
-                  </div>
-                  <div>
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      id="btn-predict"
-                    >
-                      Predict!
-                    </button>
-                  </div>
+                  <div class="loader" style="display: none"></div>
+
+                  <h3>
+                    <span id="result"> </span>
+                  </h3>
                 </div>
-
-                <div class="loader" style="display: none"></div>
-
-                <h3>
-                  <span id="result"> </span>
-                </h3>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="title">
+        <h2>Contact</h2>
+      </div>
+      <div class="container">
+        <h1>Submit a Description of Waste for Disposal Instructions</h1>
+        <form action="/generate_response" method="post">
+            <textarea name="user_input" rows="4" cols="50" placeholder="Enter description of the waste here..."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="response"></div>
     </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('form').on('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting via the browser
+            $.ajax({
+                url: '/generate_response',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    $('#response').html('<p>' + response.response + '</p>');
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
   </body>
 
   <footer>
